@@ -1,0 +1,17 @@
+security:
+  oauth2:
+    client:
+      clientId: client
+      clientSecret: password
+      accessTokenUri: http://auth-service:5000/uaa/oauth/token
+      grant-type: password
+
+
+server:
+  servlet:
+    context-path: /user
+  port: 8081
+
+feign:
+  hystrix:
+    enabled: true

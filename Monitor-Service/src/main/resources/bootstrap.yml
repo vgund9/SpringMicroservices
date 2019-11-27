@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: monitor-service
+  boot:
+    admin:
+      client:
+        username: admin
+        password: admin
+        instance: 
+          metadata:
+            user:
+              name: ${spring.security.user.name}
+              password: ${spring.security.user.password}
+        
+
+  security:
+    user:
+      name: admin
+      password: admin
+
+ # cloud:
+  #  config:
+   #   uri: http://localhost:9190
+    #  fail-fast: false
+    #  password: ${CONFIG_SERVICE_PASSWORD}
+     # username: user
+
+server:
+  port: 5555 
+  
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8088/eureka/

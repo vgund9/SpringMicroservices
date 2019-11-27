@@ -1,0 +1,25 @@
+logging:
+  level:
+    org.springframework.security: INFO
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+      
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8088/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://auth-service:8888/uaa/users/current
